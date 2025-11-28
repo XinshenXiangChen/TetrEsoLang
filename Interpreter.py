@@ -1,8 +1,3 @@
-with open("test_code.txt","r") as f:
-    code = f.read()
-
-print(code)
-
 class Interpreter:
 
     class Memory:
@@ -34,19 +29,18 @@ class Interpreter:
         def move_register(self, register1, register2):
             self.registers[register1] = self.get_register(register2)
 
-    def __init__(self, code):
-        self.code = code
-        self.list_code = self.parse()
+    def __init__(self):
 
         self.memory = Interpreter.Memory()
 
-    def parse(self):
-        return [line.split(" ") for line in self.code.split("\n")]
+    def parse(self, code):
+        return [line.split(" ") for line in code.split("\n")]
 
-    def interpret(self):
+    def interpret(self, code):
+
         i = 0
-        while i < len(self.list_code):
-            instruction = self.list_code[i]
+        while i < len(code):
+            instruction = code[i]
             match instruction[0]:
                 case "ADD":
                     self.memory.add(instruction[1], instruction[2], instruction[3])
@@ -71,8 +65,3 @@ class Interpreter:
             print(self.memory.registers)
             i = i + 1
 
-
-
-if __name__ == '__main__':
-    parser = Interpreter(code)
-    parser.interpret()

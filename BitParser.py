@@ -1,27 +1,20 @@
+import utils
+
 class BitParser:
-    def __init__(self, bitcode):
-        self.bitcode = bitcode
 
-    def get_value_from_bits(self, bits):
-        result = 0
-        for i in range(0, len(bits)):
-            result += int(bits[len(bits)-i-1]) * 2**i
-        return result
-
-    def parse(self):
+    def parse(self, bitcode):
 
         instructions = []
-        for instruction in self.bitcode.split("\n"):
-            for atom in instruction.split(" "):
-                print(atom)
+
+        for instruction in bitcode.split("\n"):
+            line = instruction.split(" ")
+            full_instruction = utils.values[utils.get_value_from_bits(line[0])]
+
+            for i in range(1, len(full_instruction)):
+                full_instruction[i] = full_instruction[i] + str(utils.get_value_from_bits(line[i]))
+
+            instructions.append(full_instruction)
+
+        return instructions
 
 
-
-if __name__ == "__main__":
-    with open("test_bitcode", "r") as f:
-        code = f.read()
-
-    print(code)
-
-    parser = BitParser(code)
-    parser.parse()

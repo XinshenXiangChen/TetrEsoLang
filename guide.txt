@@ -5,4 +5,4 @@ Instruction set manual
 2. BRZ Line Regx
 3. SET Regx value
 4. MVE Regx Regy
-4. PR Regx
+5. PR Regx

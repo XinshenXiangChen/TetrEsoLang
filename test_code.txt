@@ -1,0 +1,4 @@
+SET Reg1 1000
+MVE Reg2 Reg1
+ADD Reg3 Reg1 Reg2
+PR Reg3

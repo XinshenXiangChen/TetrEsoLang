@@ -1,0 +1,8 @@
+Instruction set manual
+
+0. ADD Regz Regx Regy
+1. SUB Regz Regx Regy
+2. BRZ Line Regx
+3. SET Regx value
+4. MVE Regx Regy
+4. PR Regx

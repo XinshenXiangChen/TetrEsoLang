@@ -1,7 +1,7 @@
 import pygame
 import random
 import Interpreter
-from TetrEsoLang.BitParser import BitParser
+from BitParser import BitParser
 
 pygame.init()
 

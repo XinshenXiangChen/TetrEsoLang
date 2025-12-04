@@ -128,7 +128,7 @@ class TextEditor:
         elif key == pygame.K_RETURN:
             self.insert_text('\n')
 
-        elif key == pygame.K_o:
+        elif key == pygame.K_i:
             # Show dictionary menu
             if self.cleared_lines:
                 self.show_dict_menu = True
